@@ -1,7 +1,7 @@
 :root {
   color-scheme: light;
   --ink: #252a23;
-  --paper: #f7f6f1;
+  --paper: #e9e5da;
   --olive: #6f7651;
   --muted: #77786e;
   --serif: "Playfair Display", Georgia, serif;
@@ -75,25 +75,32 @@ a {
   transition: color 180ms ease;
 }
 
-.main-nav > a:not(.nav-cta):hover,
-.text-link:hover {
+.main-nav > a:not(.nav-cta):hover {
   color: var(--olive);
 }
 
 .nav-cta {
-  padding: 12px 17px;
-  border: 1px solid #d9d8d0;
-  border-radius: 2px;
-  transition: background 180ms ease, color 180ms ease;
+  padding: 12px 18px;
+  border: none;
+  background: var(--olive);
+  color: white;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
 .nav-cta:hover {
+  transform: translateY(-2px);
+  border-color: var(--ink);
   background: var(--ink);
-  color: white;
 }
 
 .nav-cta span {
   margin-left: 9px;
+}
+
+.nav-cta:focus-visible,
+.text-link:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
 }
 
 .eyebrow {
@@ -260,12 +267,20 @@ h2 {
 .text-link {
   display: inline-flex;
   align-items: center;
-  gap: 20px;
-  padding-bottom: 7px;
-  border-bottom: 1px solid #a8a995;
+  gap: 12px;
+  padding: 11px 16px;
+  border: 1px solid var(--olive);
+  border-radius: 999px;
+  color: var(--olive);
   font-size: 11px;
   font-weight: 600;
-  transition: color 180ms ease;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.text-link:hover {
+  transform: translateY(-2px);
+  background: var(--olive);
+  color: white;
 }
 
 .site-footer {
@@ -305,7 +320,7 @@ h2 {
   }
 
   .nav-cta {
-    padding: 10px 12px;
+    padding: 10px 15px;
     font-size: 10px;
   }
 
